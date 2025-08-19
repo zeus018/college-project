@@ -1,0 +1,253 @@
+/* Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f8f9fa;
+    color: #0f172a;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #e0f2fe, #f8f9fa);
+}
+
+.highlight {
+    color: #2563eb;
+}
+
+/* Group buttons in home section */
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Shared button base for icon alignment */
+.btn,
+.btn-outline {
+    display: inline-flex; /* Align icon and text in one row */
+    align-items: center;  /* Vertically center icon with text */
+    gap: 8px;             /* Space between icon and text */
+    padding: 12px 28px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    will-change: transform;
+    border: 2px solid transparent; /* Default border for btn-outline */
+    height: 48px; /* Consistent height for both button types */
+}
+
+/* Filled button style */
+.btn {
+    background: #2563eb;
+    color: white;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #2563eb;
+    border: #2563eb 2px solid;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Outline button style */
+.btn-outline {
+    background: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.btn-outline:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Icon styling */
+.btn i,
+.btn-outline i {
+    width: 18px;
+    height: 18px;
+}
+
+
+
+/* About */
+.about p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.05rem;
+    color: #475569;
+}
+
+/* Projects */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.project-card h3 {
+    color: #0f172a;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Contact Form */
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, 
+.contact textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .btn,
+    .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 50px 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+    .contact form {
+        width: 100%;
+    }
+}
